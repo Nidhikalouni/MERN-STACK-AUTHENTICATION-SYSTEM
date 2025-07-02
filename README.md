@@ -55,6 +55,10 @@ Cross-origin authentication setup with withCredentials
 OTP generation and email delivery with Nodemailer
 
 Deploying full-stack MERN apps using Render and Vercel
+
+**Demo Preview**
+![image](https://github.com/user-attachments/assets/73349af0-6858-4f6b-9a5b-52269f607b50)
+
 **🙋‍♀️ Created by**
 Nidhi Kalouni
 ✨ MCA Graduate | MERN Stack Developer
