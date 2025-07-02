@@ -1,5 +1,6 @@
 # Ignore env files
 Server/.env
+client/.env
 .env
 .env.local
 
