@@ -14,30 +14,35 @@ export const AppContextProvider = (props)=>{
 
     const[userData, setUserData] = useState(false)
 
-    //getting authentication state (is user authenticated or not)
-    const getAuthState = async()=>{
-        try{
-            const {data} = await axios.get(backendURL + '/api/auth/is-auth')
-            if(data.success){
-                setIsLoggedin(true)
-                getUserData()
-            }
-        }catch(error){
-              toast.error(error.message)
-        }
+    // 1. Authentication Check
+const getAuthState = async () => {
+  try {
+    const { data } = await axios.get(`${backendURL}/api/auth/is-auth`, {
+      withCredentials: true
+    });
+    if (data.success) {
+      setIsLoggedin(true);
+      getUserData();
     }
+  } catch (error) {
+    toast.error(error.message);
+  }
+};
 
+// 2. Get User Data
+const getUserData = async () => {
+  try {
+    const { data } = await axios.get(`${backendURL}/api/user/data`, {
+      withCredentials: true
+    });
+    data.success ? setUserData(data.userData) : toast.error(data.message);
+  } catch (error) {
+    toast.error(error.message);
+  }
+};
 
-    //getting userdata
-    const getUserData = async()=>{
-        try {
-          const {data} = await axios.get(backendURL + '/api/user/data')
-          data.success ? setUserData(data.userData) : toast.error(data.message)  
-        
-        } catch (error) {
-            toast.error(error.message)
-        }
-    }
+   
+    
 
     useEffect(()=>{
         getAuthState();
