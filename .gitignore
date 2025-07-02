@@ -1,0 +1,17 @@
+# Ignore env files
+Server/.env
+.env
+.env.local
+
+# Ignore node_modules from both client & server
+client/node_modules/
+Server/node_modules/
+
+# Ignore build output
+client/dist/
+client/build/
+Server/dist/
+Server/build/
+
+# System files
+.DS_Store
