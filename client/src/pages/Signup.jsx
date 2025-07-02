@@ -5,7 +5,7 @@ import { AppContext } from '../context/AppContext'
 import axios from 'axios'
 import { toast } from 'react-toastify'
 
-const SignUp = () => {
+const Signup = () => {
   const navigate = useNavigate()
   const { backendURL, setIsLoggedin, getUserData } = useContext(AppContext)
   const [name, setName] = useState('')
@@ -68,4 +68,4 @@ const SignUp = () => {
   )
 }
 
-export default SignUp
+export default Signup
